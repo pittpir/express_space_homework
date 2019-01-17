@@ -11,14 +11,15 @@ describe('mission routes', function(){
             .expect(200)
             .expect((response)=>{
                 const $ = cheerio.load(response.text);
+                console.log($('.missions').text());
                 $('.missions li:first-child').text().should.be.eq('Curiosity')
-                $('.missions li:last-child').text().should.be.eq('Rosetta');
+                //$('.missions li:last-child').text().should.be.eq('Rosetta');
             })
             .end(done);
     })
-    it('displays a specific mission by index', function(done){
+    it('displays a specific mission by name', function(done){
         supertest(app)
-        .get('/missions/0')
+        .get('/missions/Curiosity')
         .expect(200)
         .expect((response)=>{
             const $ = cheerio.load(response.text);

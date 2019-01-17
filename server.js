@@ -22,11 +22,13 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'ejs');
 
+module.exports = app;
+//module.exports = app.listen(3000);
 // PORT
 const port = 3000;
 let data = require ("./models/marsMissions.js");
 
-app.get('/', (req,res) => {
+app.get('/missions', (req,res) => {
   //res.send('<h1>Hello</h1>');
   //res.render('pages/index.ejs',{title : title, names : names})
   res.render('pages/index.ejs', { data });
@@ -35,7 +37,7 @@ app.get('/', (req,res) => {
 let me = "/cow";
 
 data.map(function (data1,index) {
-  createGet("/" + data1.name, index);
+  createGet("/missions/" + data1.name, index);
 })
 
 function createGet (me,index) {
@@ -44,9 +46,6 @@ app.get(me, (req,res) => {
   res.render('pages/show.ejs', { data1 });
 })
 }
-
-
-
 
 // INDEX Route
 // send data to 'missions/index.ejs' view
