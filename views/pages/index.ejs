@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title>EJS Example</title>
+</head>
+<body>
+	<h1>Missions:</h1>
+	
+	<ul> <% data.map((item) => { %>
+		<li><a href="localhost:3000/<%= item.name %>" > <%= item.name %> </li>
+		<% }); %>
+	</ul>
+</body>
+</html>
+
