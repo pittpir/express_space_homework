@@ -7,8 +7,8 @@
 <body>
 	<h1>Missions:</h1>
 	
-	<ul class="missions"> <% data.map((item) => { %>
-		<li><a href="localhost:3000/missions/<%= item.name %>" ><%= item.name %></li>
+	<ul class="missions"> <% data.map((item,index) => { %>
+		<li><a href="localhost:3000/missions/<%= index %>" ><%= item.name %></li>
 		<% }); %>
 	</ul>
 </body>

@@ -19,7 +19,7 @@ describe('mission routes', function(){
     })
     it('displays a specific mission by name', function(done){
         supertest(app)
-        .get('/missions/Curiosity')
+        .get('/missions/0')
         .expect(200)
         .expect((response)=>{
             const $ = cheerio.load(response.text);

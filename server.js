@@ -36,6 +36,7 @@ app.get('/missions', (req,res) => {
 
 let me = "/cow";
 
+/*
 data.map(function (data1,index) {
   createGet("/missions/" + data1.name, index);
 })
@@ -46,6 +47,12 @@ app.get(me, (req,res) => {
   res.render('pages/show.ejs', { data1 });
 })
 }
+*/
+
+app.get('/missions/:index', (req,res) => {
+  let data1 = data[req.params.index];
+  res.render('pages/show.ejs', { data1 });
+})
 
 // INDEX Route
 // send data to 'missions/index.ejs' view
