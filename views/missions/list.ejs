@@ -1,0 +1,6 @@
+<section class="container">
+	<ul class="missions"> <% data.map((item,index) => { %>
+		<li><a href="/missions/<%= index %>" ><%= item.name %></li>
+		<% }); %>
+	</ul>
+</section>
